@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
 env:
   # Change these values if you have forked it for your own works
-  GitHubMail: "adnankhaliq740@gmail.com"
-  GitHubName: "clown0k" 
+  GitHubMail: "gunasekartpm018@gmail.com"
+  GitHubName: "GunaisHere" 
   Branch: "main"
 defaults:
   run:
@@ -15,14 +15,15 @@ defaults:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
     - name: Initializing environment
       run: |
         git config --global user.name ""
-        git config --global user.email ""               
-        sudo -E apt-get -qq update
-        sudo -E apt-get -qq install bc build-essential zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex curl bison aria2
+        git config --global user.email "" 
+        sudo apt-get update && sudo apt-get install -y python-is-python3
+        sudo apt-get -qq update
+        sudo apt-get -qq install bc build-essential zip curl libstdc++6 git wget gcc clang libssl-dev repo rsync flex curl bison aria2
         sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
         sudo chmod a+rx /usr/local/bin/repo
         git clone https://github.com/Hostfl/ssh ssh && cd ssh && bash *.sh
